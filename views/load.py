@@ -1,6 +1,10 @@
 import sqlalchemy as db
 from sqlalchemy import insert
 import os
+from dotenv import load_dotenv
+
+load_dotenv()  # take environment variables from .env.
+
 
 user=os.environ['MYSQL_USERNAME']
 password=os.environ['MYSQL_PASSWORD']

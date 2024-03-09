@@ -3,6 +3,9 @@ import spotipy
 from spotipy.oauth2 import SpotifyOAuth
 import datetime
 import pandas as pd
+from dotenv import load_dotenv
+
+load_dotenv()  # take environment variables from .env.
 
 scope = "user-read-recently-played"
 sp = spotipy.Spotify(auth_manager=SpotifyOAuth(client_id=os.environ['SPOTIPY_CLIENT_ID'],

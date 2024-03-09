@@ -4,6 +4,10 @@ from sqlalchemy.dialects.mysql import JSON
 from sqlalchemy import create_engine
 import os
 
+from dotenv import load_dotenv
+
+load_dotenv()  # take environment variables from .env.
+
 user=os.environ['MYSQL_USERNAME']
 password=os.environ['MYSQL_PASSWORD']
 host = os.environ['MYSQL_HOST']
@@ -24,6 +28,5 @@ class PlayedSong(Base):
 engine = create_engine(f'mysql+pymysql://{user}:{password}@{host}/etl-spotify')
 
 Base.metadata.create_all(engine)
- 
   
     
